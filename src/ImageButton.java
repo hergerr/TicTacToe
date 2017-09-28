@@ -18,7 +18,7 @@ public class ImageButton extends JToggleButton {
 	
 	}
 	
-	public void markFieldwithO(){
+	public void markFieldwithO(){ 
 		int i = (int)(Math.random()*9);
 		if(Field.buttonTab[i].isEmpty()) Field.buttonTab[i].setIcon(oImg);
 		else i = (int)(Math.random()*9);
@@ -26,6 +26,7 @@ public class ImageButton extends JToggleButton {
 		this.setIcon(oImg);
 		
 	}
+	
 	
 	public boolean isEmpty(){
 		if(this.getIcon() == whiteImg) return true; //TODO why it doesn't work with imgCounter 
@@ -40,9 +41,8 @@ public class ImageButton extends JToggleButton {
 	
 private class ListenForButton implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
-		++imgCounter;
-		System.out.println(imgCounter);
-			
+		//e.getSource().setIcon(xImg); //does not work but it's just technical thing
+		markFieldwithO();
 		}
 	
 	}
